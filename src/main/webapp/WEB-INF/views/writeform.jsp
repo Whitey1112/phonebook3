@@ -13,11 +13,14 @@
 	<h2>전화번호-등록폼</h2>
 
 	<p>아래의 항목을 입력한 후 등록버튼을 클릭해 주세요</p>
-	
-	<form action="/phonebook2/pbc" method="get">
+	<!-- method="get" 개발자를 위한(글자 수 제한 O),request문서의 head -->
+	<!-- method="post"사이트 사용자를위한(주소에 나와있는 개인정보를 나타내지않음)(글자 수 제한 X), request문서의 body -->
+	<!-- method="get" = http://localhost:8888/phonebook3/write?name=김선우hp=010&company=02 -->
+	<!-- method="post" = http://localhost:8888/phonebook3/write-->
+	<form action="/phonebook3/write" method="get">
 		<div>
 			<label for="txt-name">이름(name):</label> 
-			<input id="txt-name" type="text" name="aaa" value="" placeholder="이름">
+			<input id="txt-name" type="text" name="name" value="" placeholder="이름">
 		</div>
 		
 		<div>
@@ -29,7 +32,6 @@
 			<label for="txt-company">회사(company):</label> 
 			<input id="txt-company" type="text" name="company" value="" placeholder="회사">
 		</div>
-		숨김<input type="text" name="action" value="insert">
 		<br>
 		<button type="submit">등록(전송)</button>
 	</form>
